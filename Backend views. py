@@ -1,0 +1,40 @@
+from django.shortcuts import render, redirect
+from .models import Patient
+
+
+def patients(request):
+
+    data = Patient.objects.all()
+
+    return render(
+        request,
+        "patients.html",
+        {"patients": data}
+    )
+
+
+def add_patient(request):
+
+    if request.method == "POST":
+
+        Patient.objects.create(
+
+            name=request.POST["name"],
+
+            age=request.POST["age"],
+
+            gender=request.POST["gender"],
+
+            phone=request.POST["phone"],
+
+            disease=request.POST["disease"],
+
+            doctor=request.POST["doctor"],
+
+            appointment_date=
+            request.POST["appointment_date"]
+        )
+
+        return redirect("patients")
+
+    return render(request, "add_patient.html")
