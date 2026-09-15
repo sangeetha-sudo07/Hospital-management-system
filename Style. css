@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f7f9;
+}
+
+header {
+    background: #1683a8;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+nav {
+    background: white;
+    padding: 15px;
+    text-align: center;
+}
+
+nav button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background: #1683a8;
+    color: white;
+    cursor: pointer;
+}
+
+.container {
+    width: 90%;
+    margin: 30px auto;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.card p {
+    font-size: 30px;
+    color: #1683a8;
+}
+
+.hidden {
+    display: none;
+}
+
+input,
+select {
+    padding: 12px;
+    margin: 8px;
+    width: 90%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    padding: 12px 25px;
+    background: #1683a8;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background: #1683a8;
+    color: white;
+}
+
+.edit {
+    background: orange;
+    color: white;
+    border: none;
+    padding: 6px;
+}
+
+.delete {
+    background: red;
+    color: white;
+    border: none;
+    padding: 6px;
+}
+
+@media (max-width: 700px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}a
