@@ -102,5 +102,7 @@ The project provides a simple and user-friendly software prototype for managing 
 - User Login
 - Admin Dashboard
 - Patient Reports
-output:
-https://sangeetha-sudo07.github.io/hospital-management-systems/
+
+
+
+output://sangeetha-sudo07.github.io/hospital-management-systems/
