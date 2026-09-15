@@ -102,5 +102,4 @@ The project provides a simple and user-friendly software prototype for managing 
 - User Login
 - Admin Dashboard
 - Patient Reports
-- REST API Integration
-- Online Appointment Booking
+
