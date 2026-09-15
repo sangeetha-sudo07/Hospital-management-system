@@ -105,4 +105,4 @@ The project provides a simple and user-friendly software prototype for managing 
 
 
 
-output://sangeetha-sudo07.github.io/hospital-management-systems/
+output:https://sangeetha-sudo07.github.io/hospital-management-systems/
