@@ -1,0 +1,17 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+
+    path(
+        "patients/",
+        views.patients,
+        name="patients"
+    ),
+
+    path(
+        "add-patient/",
+        views.add_patient,
+        name="add_patient"
+    ),
+]
