@@ -1,0 +1,141 @@
+let patients = JSON.parse(
+    localStorage.getItem("patients")
+) || [];
+
+function showPage(page) {
+
+    document.getElementById("dashboard")
+        .classList.add("hidden");
+
+    document.getElementById("patients")
+        .classList.add("hidden");
+
+    document.getElementById("add")
+        .classList.add("hidden");
+
+    document.getElementById(page)
+        .classList.remove("hidden");
+
+    displayPatients();
+}
+
+document.getElementById("patientForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let patient = {
+
+        id: patients.length + 1,
+
+        name: document.getElementById("name").value,
+
+        age: document.getElementById("age").value,
+
+        gender: document.getElementById("gender").value,
+
+        phone: document.getElementById("phone").value,
+
+        disease: document.getElementById("disease").value,
+
+        doctor: document.getElementById("doctor").value,
+
+        date: document.getElementById("date").value
+    };
+
+    patients.push(patient);
+
+    localStorage.setItem(
+        "patients",
+        JSON.stringify(patients)
+    );
+
+    alert("Patient added successfully!");
+
+    this.reset();
+
+    updateDashboard();
+
+    showPage("patients");
+});
+
+
+function displayPatients() {
+
+    let table =
+        document.getElementById("patientTable");
+
+    let search =
+        document.getElementById("search").value
+        .toLowerCase();
+
+    table.innerHTML = "";
+
+    patients.forEach(function(patient) {
+
+        if (
+            patient.name.toLowerCase()
+            .includes(search)
+        ) {
+
+            let row = table.insertRow();
+
+            row.innerHTML = `
+
+                <td>${patient.id}</td>
+
+                <td>${patient.name}</td>
+
+                <td>${patient.age}</td>
+
+                <td>${patient.gender}</td>
+
+                <td>${patient.phone}</td>
+
+                <td>${patient.disease}</td>
+
+                <td>${patient.doctor}</td>
+
+                <td>${patient.date}</td>
+
+                <td>
+                    <button class="delete"
+                    onclick="deletePatient(${patient.id})">
+                    Delete
+                    </button>
+                </td>
+            `;
+        }
+    });
+}
+
+
+function deletePatient(id) {
+
+    patients = patients.filter(
+        patient => patient.id !== id
+    );
+
+    localStorage.setItem(
+        "patients",
+        JSON.stringify(patients)
+    );
+
+    displayPatients();
+
+    updateDashboard();
+}
+
+
+function updateDashboard() {
+
+    document.getElementById(
+        "totalPatients"
+    ).innerText = patients.length;
+
+    document.getElementById(
+        "appointments"
+    ).innerText = patients.length;
+}
+
+updateDashboard();
